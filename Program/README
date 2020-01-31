@@ -1,4 +1,4 @@
-Running these programs requires python2-scipy. To run the examples use:
+Running these programs requires python2-scipy and python2-matplotlib. To run the examples use:
 
 python2 DiscretistaionExample.py
 python2 GetConvergenceRateDevations.py
