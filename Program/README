@@ -1,7 +1,14 @@
 Running these programs requires python2-scipy and python2-matplotlib. To run the examples use:
 
-python2 DiscretistaionExample.py
-python2 DiscretistaionComparisonExample.py
-python2 GetConvergenceRateDevations.py
+python2 <program name>.py
 
+The programs are:
+
+DirichletNeumannAlogorithmComparison.py: plot the approximation gained from the dn algorithm along a global discretisation.
+
+DiscretisationComparisonExample.py: plot a discrete approxmation of a diff equation along the correct solution.
+
+DiscretisationExample.py: Simple program that shows how the discretisations are used
+
+GetConvergenceRateDevation: prints the devations of the expected convergence rate for 4 different adaptive grids.
 
