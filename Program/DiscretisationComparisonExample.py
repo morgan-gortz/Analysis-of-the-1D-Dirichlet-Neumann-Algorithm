@@ -5,13 +5,25 @@ import matplotlib.pyplot as plt
 This script shows how the discretisations are used
 """
 
-discType = "FEM" # FDM,FEM,FVM
+discType = "FVM" # FDM,FEM,FVM
 boundaryType = "NEUDIR" # NEUDIR, DIRDIR
-grid = sc.linspace(0,1,1000)
-f = lambda x: -2
-a = 1 # left bc (Neumann in NEUDIR)
-b = 2 # right bc (always Dirichlet)
-lmda = 2 # lambda in the diff equation
+res = 4
+
+if(boundaryType == "DIRDIR"):
+    grid = sc.linspace(0,1,res)
+    f = lambda x: -2
+    a = 1 # left bc (Neumann in NEUDIR)
+    b = 2 # right bc (always Dirichlet)
+    lmda = 1 # lambda in the diff equation
+    ue = lambda x: -x**2 + 1 + 2*x
+elif(boundaryType == "NEUDIR"):
+    grid = sc.linspace(0,1,res)
+    f = lambda x: -2
+    a = 1 # left bc (Neumann in NEUDIR)
+    b = 2 # right bc (always Dirichlet)
+    lmda = 1 # lambda in the diff equation
+    ue = lambda x: -x**2 + x +2
+
 
 linSolver = dn.SPSolver()
 if(discType == "FDM"):
@@ -28,6 +40,8 @@ elif(boundaryType == "NEUDIR"):
     u = disc.neu(f,lmda,a,b)
 else:
     raise RuntimeError("boundaryType has to be DIRDIR or NEUDIR")
-#Plot the solution
-plt.plot(grid,[u(x) for x in grid])
+#Plot the error
+pgrid = sc.linspace(0,1,1000)
+plt.plot(pgrid,[u(x) for x in pgrid])
+plt.plot(pgrid,[ue(x) for x in pgrid])
 plt.show()
