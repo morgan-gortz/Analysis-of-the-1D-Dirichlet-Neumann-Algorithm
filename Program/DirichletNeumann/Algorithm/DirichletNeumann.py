@@ -1,4 +1,5 @@
 import scipy as sc
+import matplotlib.pyplot as plt
 def dirneu(dirich,neumann,b11,b22,lmda1,lmda2,f1,f2, maxit = 100, tol = 1e-8, show = True, all_gamma=True,mute = False):
     it = 0
     gammak  = 0
