@@ -12,3 +12,6 @@ DiscretisationExample.py: Simple program that shows how the discretisations are 
 
 GetConvergenceRateDevation: prints the devations of the expected convergence rate for 4 different adaptive grids.
 
+ConvergenceVisualization1.py : shows the first 4 iterations for the dn algorithm for different discretisations 
+ConvergenceVisualization2.py : and grid types
+
